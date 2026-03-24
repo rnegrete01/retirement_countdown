@@ -2,7 +2,7 @@
  * Authors: Ethan McEvoy & Rafael Negrete Fonseca
  * Date: 2/24/2026
  * GitHub URL: https://github.com/rnegrete01/retirement_countdown
- *
+ * hi
  */
 
 "use strict";
