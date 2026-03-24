@@ -1,3 +1,10 @@
+/**
+ * Authors: Ethan McEvoy & Rafael Negrete Fonseca
+ * Date: 2/24/2026
+ * GitHub URL: https://github.com/rnegrete01/retirement_countdown
+ *
+ */
+
 "use strict";
 
 // Defer in HTML allows us to grab these immediately at the top
