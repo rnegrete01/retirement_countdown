@@ -10,7 +10,6 @@
 // Defer in HTML allows us to grab these immediately at the top
 const $ = selector => document.querySelector(selector);
 
-const nameIn    = $("#client_name");
 const emailIn   = $("#email");
 const investIn  = $("#investment");
 const addIn     = $("#monthly_add");
@@ -21,6 +20,10 @@ const statusMsg = $("#status_message");
 const output    = $("#projection_output");
 const form      = $("#projection_form");
 const testData  = $("#test_data");
+
+//constant variables from HMTL
+const name = document.querySelector("#name");
+
 
 let projectionTimer = null;
 
@@ -39,6 +42,12 @@ const processEntries = (evt) => {
     resetForm()
 
     // TODO: Validate Name
+    if(!isNaN(name) || name == ""){
+        isValid = false;
+
+        event.preventDefault();
+
+    }
 
     // TODO: Validate Email
 
