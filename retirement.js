@@ -41,21 +41,27 @@ const formatter = new Intl.NumberFormat('en-US', {
 const processEntries = (evt) => {
     let isValid = true;
     let years = 0;
+
     evt.preventDefault();
-    resetForm()
+    resetForm(); //get rid of the errors, not the input fields
+
 // Validate the name
-    if (nameIn.value.trim() === "") {
-        $("#nameError").textContent = nameIn.title; // Pulls from title attribute
+    if (nameIn.value.trim() === "" || !isNaN(nameIn.value)) {
+        nameErr.textContent = nameIn.title; // Pulls from title attribute
         isValid = false;
     }
+
     /* TODO: Validate Email
     const emailPattern = /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/;
     if (!emailPattern.test(emailIn.value.trim())) {
     */
+
     const emailPattern = /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/;
     if (!emailPattern.test(emailIn.value.trim())) {
+        emailErr.textContent = emailIn.title; // Pulls from title attribute
         isValid = false;
     }
+
     /* TODO: Validate Date
     if date is empty
     display error similar to name logic
@@ -133,11 +139,17 @@ const setTestData = () => {
     (2) add 10 years to the future date variable (Ch 8)
     (3) use toISOString().split('T')[0] to display the future date (Ch 8)
     */
+
+    const retireDate = new Date();
+    retireDate.setFullYear(retireDate.getFullYear() + 10);
+    dateIn.value = retireDate.toISOString().split("T")[0];
+
     nameIn.value = "John Smith";
     emailIn.value = "John.Smith@wsc.edu"
     investIn.value = 100000;
     addIn.value = 500;
     rateIn.value = 5.5;
+
     //dateIn.value = Date.now();
 };
 const resetForm = () => {
@@ -149,13 +161,18 @@ const resetForm = () => {
     set the statusMsg to red (see code example above)
     set the focus to the name input field (Ch 9)
     */
+
     errBox.textContent = "";
     output.textContent = "";
     statusMsg.textContent = "";
     //clearInterval(startProjection);
+    document.querySelectorAll(".error").forEach(s => s.textContent = "*");
     statusMsg.style.color = "red";
     document.body.style.width = "350px";
     nameIn.focus();
+
+
+
 };
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", processEntries);
