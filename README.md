@@ -20,7 +20,7 @@ Retirement Date | Planned retirement date
 > - We learned various get methods for a *Date()* object.
 
 # <img src="https://github.com/user-attachments/assets/f3d6b6e8-c627-49e2-9a4c-f1d3af5a3a25" alt="BongoCatButtonGIF" width="40" height="40">Buttons:
-## The __"Test Data"__ button:
-<img src="assets/retirement_projector_gif.gif" width="250" height="250" />
+##The __"Test Data"__ button:
+<img src="assets/retirement_projector_gif.gif" width="300" height="300" />
 
 
