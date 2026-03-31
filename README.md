@@ -1,7 +1,7 @@
 ﻿# 🧮Program Description <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /> <img src="https://img.shields.io/badge/WebStorm-000000?style=for-the-badge&logo=WebStorm&logoColor=white"/>  
 > *Essentially, this program is a future value calculator that performs calculations using the data that is inserted by the user. It also serves as retirement countdown counter that takes your retirement date and counts how many years are left before then. The output box centered at the bottom outputs a "live projection" that updates every second, showing how your money grows over each year.*
 
-# Table of Contents
+# 📕Table of Contents
 * [Program Description](#program-description-)
 * [Required Inputs](#required-inputs)
 * [New Concepts Learned](#new-concepts-learned-developing-this-program)
