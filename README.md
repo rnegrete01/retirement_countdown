@@ -33,11 +33,11 @@ Take a look!👀 <br>
 
 # 🧑‍🎓Authors
 Ethan McEvoy
-GitHub URL: https://github.com/EMcE01
-Email: etmcev01@wsc.edu
+> - GitHub URL: https://github.com/EMcE01
+> - Email: etmcev01@wsc.edu
 
 Rafael Negrete Fonseca
-GitHub URL: https://github.com/rnegrete01
-Email: ranegr01@wsc.edu or rafaelnegretefonseca123@gmail.com
+> - GitHub URL: https://github.com/rnegrete01
+> - Email: ranegr01@wsc.edu or rafaelnegretefonseca123@gmail.com
 
 
