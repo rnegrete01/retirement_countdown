@@ -31,4 +31,13 @@ The __"Reset"__ button:<br>
 Take a look!👀 <br>
 <img src="assets/retirement_projector_reset_gif.gif" width="300" height="300" />
 
+# 🧑‍🎓Authors
+Ethan McEvoy
+GitHub URL: https://github.com/EMcE01
+Email: etmcev01@wsc.edu
+
+Rafael Negrete Fonseca
+GitHub URL: https://github.com/rnegrete01
+Email: ranegr01@wsc.edu or rafaelnegretefonseca123@gmail.com
+
 
