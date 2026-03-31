@@ -1,6 +1,6 @@
 /**
  * Authors: Ethan McEvoy & Rafeal ...
- * date: 3/26/26
+ * date: 3/31/26
  * assignment: CH 8 & 9 retirement countdown
  *
  * This code does...
@@ -21,7 +21,7 @@ const emailErr = $("#email_error");
 const investErr = $("#investment_error");
 const addErr = $("#monthly_add_error");
 const rateErr = $("#rate_error");
-const dateErr = $("#retirement_date_error");
+const dateErr = $("#retire_date_error");
 
 const errBox = $("#error_message");
 const statusMsg = $("#status_message");
@@ -70,24 +70,28 @@ const processEntries = (evt) => {
     if years is less or equal to 0 || greater than 75
     display error similar to name logic
     */
-    if (isNaN(investIn) || investIn < 0) {
-        $("#investErr").textContent = investIn.title;
+    years = new Date(dateIn.value).getFullYear() - new Date().getFullYear();
+
+    if (new Date(dateIn.value).toString() === "Invalid Date" || years < 0 || years >75) {
+        dateErr.textContent = dateIn.title;
         isValid = false;
     }
+
+    if (isNaN(investIn.value) || investIn.value < 0 || investIn.value === " ") {
+        investErr.textContent = investIn.title;
+        isValid = false;
+    }
+
     /*
     TODO: do the same for the other two numeric input values
     based on the input field's title data validation message
     */
-    if (isNaN(rateIn) || rateIn < 0) {
-        $("#rateErr").textContent = rateIn.title;
+    if (isNaN(rateIn.value) || rateIn.value < 0 || rateIn.value === " ") {
+        rateErr.textContent = rateIn.title;
         isValid = false;
     }
-    if (isNaN(addIn) || addIn < 0) {
-        $("#addErr").textContent = addIn.title;
-        isValid = false;
-    }
-    if (isNaN(investIn) || investIn < 0) {
-        $("#investErr").textContent = rateIn.title;
+    if (isNaN(addIn.value) || addIn.value < 0 || addIn.value === " ") {
+        addErr.textContent = addIn.title;
         isValid = false;
     }
     /* TODO: Code try-catch logic
@@ -128,6 +132,15 @@ const startProjection = (name, bal, add, rate, years) => {
         end if
         add one to the count
         */
+        for (let i = 0; i < 12; i++) {
+            bal = ((bal + add) * (1 + (rate / 12 / 100))).toFixed(2);
+        }
+        if (count >= years) {
+            projectionTimer.clear();
+            errBox.color = "red";
+            statusMsg.textContent = "Calculation Complete!"
+
+        }
     }, 1000);
 };
 const setTestData = () => {
@@ -146,7 +159,7 @@ const setTestData = () => {
 
     nameIn.value = "John Smith";
     emailIn.value = "John.Smith@wsc.edu"
-    investIn.value = 100000;
+    investIn.value = 10000;
     addIn.value = 500;
     rateIn.value = 5.5;
 
@@ -165,7 +178,7 @@ const resetForm = () => {
     errBox.textContent = "";
     output.textContent = "";
     statusMsg.textContent = "";
-    //clearInterval(startProjection);
+    //projectionTimer.clear();
     document.querySelectorAll(".error").forEach(s => s.textContent = "*");
     statusMsg.style.color = "red";
     document.body.style.width = "350px";
