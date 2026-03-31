@@ -23,6 +23,8 @@ Retirement Date | Planned retirement date
 # <img src="https://github.com/user-attachments/assets/f3d6b6e8-c627-49e2-9a4c-f1d3af5a3a25" alt="BongoCatButtonGIF" width="40" height="40"> Button Descriptions:
 The __"Test Data"__ button:<br>
 >*Essentially, all this button does is enter data. This was primarily coded into the program so that the software developer didn't have to enter test data over and over again for testing purposes.* <br>
+
+👀take a look!: 
 <img src="assets/retirement_projector_gif.gif" width="300" height="300" />
 
 
