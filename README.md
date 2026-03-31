@@ -14,7 +14,7 @@ Retirement Date | Planned retirement date
 # 🏫New Concepts Learned Developing This Program:
 ```We learned how to work with Dates, Times, and Timers. For example:```
 > - We learned how to create a date Label for HTML file.
-> - We learned how to create a *Date()* object. \n - const now = new Date();
+> - We learned how to create a *Date()* object. For example: _*const now = new Date()*_;
 > - We learned how to validate the user's date input.
 > - We learned how to do math with dates.
 > - We learned various get methods for a *Date()* object.
