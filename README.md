@@ -21,5 +21,6 @@ Retirement Date | Planned retirement date
 
 # <img src="https://github.com/user-attachments/assets/f3d6b6e8-c627-49e2-9a4c-f1d3af5a3a25" alt="BongoCatButtonGIF" width="40" height="40">Buttons:
 ## The __"Test Data"__ button:
-![Test_data_demo](assets/retirement_projector_gif.gif)
+<img src="assets/retirement_projector_gif.gif" width="100" height="100" />
+
 
