@@ -8,8 +8,6 @@
 * [Button Descriptions](#-button-descriptions)
 * [Authors](#authors)
 
-
-
 # 💻Required Inputs:
 Field | What is it?
 ------------- | -------------
@@ -39,6 +37,11 @@ The __"Reset"__ button:<br>
 >*The purpose of this button is to clear every field of the form. It's a quality of life button! This is very useful when you want to make another future value projection. That way you don't have to clear every field manually!* <br>
 Take a look!👀 <br>
 <img src="assets/retirement_projector_reset_gif.gif" width="300" height="300" />
+
+The __"Calculate"__ button:<br>
+>*The purpose of this button is to run the calculations! It displays the information of the live projection!* <br>
+Take a look!👀 <br>
+<img src="assets/retirement_projector_calc_gif.gif" width="300" height="350" />
 
 # 🧑‍🎓Authors
 Ethan McEvoy
