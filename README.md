@@ -8,8 +8,6 @@
 * [Button Descriptions](#-button-descriptions)
 * [Authors](#authors)
 
-
-
 # 💻Required Inputs:
 Field | What is it?
 ------------- | -------------
