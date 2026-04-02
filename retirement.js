@@ -66,16 +66,16 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
-    if (isNaN(investIn.value) || investIn.value < 0 || investIn.value === " ") {
+    if (isNaN(investIn.value) || investIn.value < 0 || investIn.value === "") {
         investErr.textContent = investIn.title;
         isValid = false;
     }
 
-    if (isNaN(rateIn.value) || rateIn.value < 0 || rateIn.value === " ") {
+    if (isNaN(rateIn.value) || rateIn.value < 0 || rateIn.value === "") {
         rateErr.textContent = rateIn.title;
         isValid = false;
     }
-    if (isNaN(addIn.value) || addIn.value < 0 || addIn.value === " ") {
+    if (isNaN(addIn.value) || addIn.value < 0 || addIn.value === "") {
         addErr.textContent = addIn.title;
         isValid = false;
     }
@@ -95,16 +95,40 @@ const processEntries = (evt) => {
     //         errBox.textContent = "Please correct the entries highlighted"
     //     }
     // }
+
+    try{
+        if (!isValid) {
+            throw new Error("Please correct the entries highlighted below.")
+        }
+
+        localStorage.name = nameIn.value;
+        localStorage.email = emailIn.value;
+        localStorage.invest = investIn.value;
+        localStorage.add = addIn.value;
+        localStorage.rate = rateIn.value;
+        localStorage.date = dateIn.value;
+
+        document.body.style.width = "350px";
+        startProjection(nameIn.value, Number(investIn.value), Number(addIn.value), Number(rateIn.value), years);
+    }catch (e){
+        document.body.style.width = "700px";
+        errBox.textContent = e.message;
+
+    }
     
 };
 const startProjection = (name, bal, add, rate, years) => {
     statusMsg.textContent = `Live Projection: ${name}`;
     statusMsg.style.color = "red";
     let count = 1;
+
     const startYear = new Date().getFullYear();
+
     let formattedBal = formatter.format(bal);
     output.textContent = `Year ${startYear} = ${formattedBal}`;
+
     projectionTimer = setInterval(() => {
+
         /* TODO: code the interval logic
         format the balance - see code above
         update the output - see code above
@@ -118,12 +142,19 @@ const startProjection = (name, bal, add, rate, years) => {
         for (let i = 0; i < 12; i++) {
             bal = ((bal + add) * (1 + (rate / 12 / 100))).toFixed(2);
         }
+
+        let formattedBal = formatter.format(bal);
+        output.textContent = `Year ${startYear + count} = ${formattedBal}`;
+
         if (count >= years) {
             clearInterval(projectionTimer);
             errBox.color = "red";
             statusMsg.textContent = "Calculation Complete!"
 
         }
+
+        count++;
+
     }, 1000);
 };
 const setTestData = () => {
@@ -147,10 +178,18 @@ const resetForm = () => {
     statusMsg.style.color = "red";
     document.body.style.width = "350px";
     nameIn.focus();
+    clearInterval(projectionTimer);
 
 };
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", processEntries);
     form.addEventListener("reset", resetForm);
     testData.addEventListener("click", setTestData);
+
+    nameIn.value = localStorage.name ?? "";
+    emailIn.value = localStorage.email ?? "";
+    investIn.value = localStorage.invest ?? "";
+    addIn.value = localStorage.add ?? "";
+    rateIn.value = localStorage.rate ?? "";
+    dateIn.value = localStorage.date ?? "";
 });
