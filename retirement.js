@@ -1,6 +1,6 @@
 /**
- * Authors: Ethan McEvoy & Rafael Negrete Fonseca ...
- * date: 3/31/26
+ * @authors: Ethan McEvoy & Rafael Negrete Fonseca ...
+ * @since: 3/31/26
  * assignment: CH 8, 9, & 10 retirement countdown
  *
  * This code provides a retirement projection based on user input for current investment, monthly addition, rate of return, and retirement date. 
@@ -43,7 +43,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 });
 
 /**
- *
+ * Function responsible for validating input.
  * @param evt
  */
 const processEntries = (evt) => {
@@ -124,7 +124,7 @@ const processEntries = (evt) => {
     
 };
 /**
- *
+ * Function responsible for projecting the time interval in the output box
  * @param name
  * @param bal
  * @param add
@@ -171,6 +171,11 @@ const startProjection = (name, bal, add, rate, years) => {
 
     }, 1000);
 };
+
+/**
+ *  Function responsible for filling fields with test Data.
+ *  This is for the software developer.
+ */
 const setTestData = () => {
     resetForm();
     const retireDate = new Date();
@@ -184,7 +189,7 @@ const setTestData = () => {
     rateIn.value = 5.5;
 };
 /**
- *
+ * Reset form to empty all of the fields
  */
 const resetForm = () => {
 
@@ -199,7 +204,7 @@ const resetForm = () => {
 
 };
 /**
- *
+ * Event listener for buttons
  */
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", processEntries);
