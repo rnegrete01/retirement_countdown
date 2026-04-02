@@ -1,13 +1,14 @@
 /**
- * Authors: Ethan McEvoy & Rafeal ...
+ * Authors: Ethan McEvoy & Rafael Negrete Fonseca ...
  * date: 3/31/26
- * assignment: CH 8 & 9 retirement countdown
+ * assignment: CH 8, 9, & 10 retirement countdown
  *
  * This code provides a retirement projection based on user input for current investment, monthly addition, rate of return, and retirement date. 
  * It validates the input, calculates the projected balance over time, and displays the results in a user-friendly format. 
  * The code also includes error handling and test data functionality to assist with testing and demonstration purposes.
  *
  */
+
 "use strict";
 // Defer in HTML allows us to grab these immediately at the top
 const $ = selector => document.querySelector(selector);
@@ -40,6 +41,11 @@ const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
 });
+
+/**
+ *
+ * @param evt
+ */
 const processEntries = (evt) => {
     let isValid = true;
     let years = 0;
@@ -117,6 +123,14 @@ const processEntries = (evt) => {
     }
     
 };
+/**
+ *
+ * @param name
+ * @param bal
+ * @param add
+ * @param rate
+ * @param years
+ */
 const startProjection = (name, bal, add, rate, years) => {
     statusMsg.textContent = `Live Projection: ${name}`;
     statusMsg.style.color = "red";
@@ -169,6 +183,9 @@ const setTestData = () => {
     addIn.value = 500;
     rateIn.value = 5.5;
 };
+/**
+ *
+ */
 const resetForm = () => {
 
     errBox.textContent = "";
@@ -181,6 +198,9 @@ const resetForm = () => {
     clearInterval(projectionTimer);
 
 };
+/**
+ *
+ */
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", processEntries);
     form.addEventListener("reset", resetForm);
