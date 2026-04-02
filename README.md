@@ -40,6 +40,11 @@ The __"Reset"__ button:<br>
 Take a look!👀 <br>
 <img src="assets/retirement_projector_reset_gif.gif" width="300" height="300" />
 
+The __"Calculate"__ button:<br>
+>*The purpose of this button is to run the calculations! It displays the information of the live projection!* <br>
+Take a look!👀 <br>
+<img src="assets/retirement_projector_calc_gif.gif" width="300" height="300" />
+
 # 🧑‍🎓Authors
 Ethan McEvoy
 > - GitHub URL: https://github.com/EMcE01
