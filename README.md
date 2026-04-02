@@ -43,7 +43,7 @@ Take a look!👀 <br>
 The __"Calculate"__ button:<br>
 >*The purpose of this button is to run the calculations! It displays the information of the live projection!* <br>
 Take a look!👀 <br>
-<img src="assets/retirement_projector_calc_gif.gif" width="300" height="300" />
+<img src="assets/retirement_projector_calc_gif.gif" width="300" height="350" />
 
 # 🧑‍🎓Authors
 Ethan McEvoy
